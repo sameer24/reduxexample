@@ -27,7 +27,7 @@ class NavBar extends Component {
     }
     render() {
         return (
-            <Navbar fixedBottom>
+            <Navbar fixedTop>
                 <Navbar.Header>
                     <Navbar.Brand>
                         <NavLink to="/" activeClassName="active"> Home </NavLink >

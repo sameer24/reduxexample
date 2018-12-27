@@ -16,8 +16,15 @@ class Gridag extends Component {
     
     createColumnDefs() {
         return [
-            {headerName: "athlete", field: "athlete"},
-            {headerName: "country", field: "country"}
+            {headerName: "Athlete", field: "athlete"},
+            {headerName: "Country", field: "country"},
+            {headerName: "Age", field: "age",checkboxSelection:true},
+            {headerName: "Date", field: "date"},
+            {headerName: "Sport", field: "sport"},
+            {headerName: "Gold", field: "gold"},
+            {headerName: "Silver", field: "silver"},
+            {headerName: "Bronze", field: "bronze"},
+            {headerName: "Total", field: "total"}
         ];
     }
 
@@ -36,6 +43,13 @@ class Gridag extends Component {
             this.props.posts.unshift(nextProps.newPosts.data);
         }
     }
+    onButtonClick = e => {
+        const selectedNodes = this.gridApi.getSelectedNodes()
+        const selectedData = selectedNodes.map(node => node.data)
+        const selectedDataStringPresentation = selectedData.map(node => node.athlete + '- Gold ' + node.gold).join(', ')
+        alert(`Selected nodes: ${selectedDataStringPresentation}`)
+      }
+    
     render() {
         // const postItems = this.props.posts.map(post =>(
         //     <div >
