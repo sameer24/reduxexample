@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "ag-grid-community": "^19.1.4",
+    "ag-grid-react": "^19.1.2",
     "axios": "^0.18.0",
     "bootstrap": "^3.3.7",
     "history": "^4.7.2",

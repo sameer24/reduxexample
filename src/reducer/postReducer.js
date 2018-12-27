@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, SEARCH_POSTID } from '../actions/types';
+import { FETCH_POSTS, NEW_POST, SEARCH_POSTID, FETCH_GRID } from '../actions/types';
 
 const initialState = {
     items: [],
@@ -19,7 +19,13 @@ export default function (state = initialState, action) {
                 ...state,
                 item: action.payload
             }
-            case SEARCH_POSTID:
+        case SEARCH_POSTID:
+            console.log(action);
+            return {
+                ...state,
+                items: action.payload
+            }
+        case FETCH_GRID:
             console.log(action);
             return {
                 ...state,

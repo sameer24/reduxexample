@@ -1,4 +1,4 @@
-import { FETCH_POSTS, NEW_POST, SEARCH_POSTID } from './types'
+import { FETCH_POSTS, NEW_POST, SEARCH_POSTID, FETCH_GRID } from './types'
 import axios from 'axios'
 
 export const fetchPosts = () => dispatch => {
@@ -35,6 +35,22 @@ export const searchText = (searchText) => dispatch => {
             const posts = response.data;
             dispatch({
                 type: FETCH_POSTS,
+                payload: posts
+            });
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+
+
+export const fetchGrid = () => dispatch => {
+    axios.get(`https://raw.githubusercontent.com/ag-grid/ag-grid/master/packages/ag-grid-docs/src/olympicWinnersSmall.json`)
+        .then(res => {
+            const posts = res.data;
+           console.log(posts);
+            dispatch({
+                type: FETCH_GRID,
                 payload: posts
             });
         })

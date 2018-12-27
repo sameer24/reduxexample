@@ -40,6 +40,9 @@ class NavBar extends Component {
                     <NavItem>
                         <NavLink to="postform" activeClassName="active"> Postform </NavLink >
                     </NavItem>
+                    <NavItem>
+                        <NavLink to="gridag" activeClassName="active"> Grid AG </NavLink >
+                    </NavItem>
                 </Nav>
                 <Navbar.Collapse>
                     <Navbar.Form pullLeft>

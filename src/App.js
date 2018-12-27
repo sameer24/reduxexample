@@ -8,6 +8,7 @@ import store from './store';
 import Posts from "./components/Posts";
 import Postform from "./components/Postform";
 import Navbar from "./components/Navbar";
+import GridAg from "./components/Gridag";
 
 //const store = createStore(()=>[],{},applyMiddleware);
 
@@ -29,6 +30,9 @@ class App extends Component {
             )} />
             <Route path="/posts" render={({ match }) => (
               <Posts />
+            )} />
+            <Route path="/gridag" render={({ match }) => (
+              <GridAg />
             )} />
             <p className="App-intro">
               To get started, edit <code>src/App.js</code> and save to reload.
