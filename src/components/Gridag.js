@@ -65,6 +65,7 @@ class Gridag extends Component {
         // )
         const postItems = this.props.posts
         return (
+            <div>
             <div
               className="ag-theme-balham"
               style={{
@@ -72,7 +73,7 @@ class Gridag extends Component {
                 width: '100%'
               }}
             >
-              <button onClick={this.onButtonClick}>Get selected rows</button>
+              
               <AgGridReact
                 onGridReady={params => this.gridApi = params.api}
                 enableSorting={true}
@@ -84,10 +85,10 @@ class Gridag extends Component {
                 /* this is where we provide custom components */
                 frameworkComponents={this.state.frameworkComponents}
                 >
-              </AgGridReact>
-      
+              </AgGridReact>              
       
             </div>
+            <button onClick={this.onButtonClick} className="btn btn-primary">Get selected rows</button></div>
           );
     }
 }
